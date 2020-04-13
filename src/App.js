@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import { BrowserRouter, Route } from 'react-router-dom'
+
+import Right from './common/right/index'
+import Write from './pages/write/index'
+import Axios from './axios'
+import { Left, Main } from './style';
+
+Component.prototype.$axios = Axios; //全局使用
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Main>
+        <Left>
+          <Route path='/write' exact component={Write}></Route>
+        </Left>
+        <Right></Right>
+      </Main>
+    </BrowserRouter>
   );
 }
 
