@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import Right from './common/right/index'
 import Write from './pages/write/index'
+import List from './pages/list/index'
 import Axios from './axios'
 import { Left, Main } from './style';
 
@@ -14,6 +15,7 @@ function App() {
       <Main>
         <Left>
           <Route path='/write' exact component={Write}></Route>
+          <Route path='/list' exact component={List}></Route>
         </Left>
         <Right></Right>
       </Main>

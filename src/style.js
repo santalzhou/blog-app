@@ -48,6 +48,7 @@ export const GlobalStyle = createGlobalStyle`
   html, body{
     height: 100%;
     overflow: hidden;
+    letter-spacing: 1px;
   }
 `
 export const Left = styled.div`
