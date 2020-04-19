@@ -1,20 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {GlobalStyle} from './style.js'
+import {GlobalStyle,} from './style.js';
 import App from './App';
-import { ThemeProvider } from 'styled-components';
-// 缓存相关
-// import * as serviceWorker from './serviceWorker';
+import {ThemeProvider, } from 'styled-components';
+
 
 const theme = {
-  mainC: '#fef',
-  darkMC: '#9932CC',
-  color: '#363636'
-}
+  'mainC': '#fef',
+  'darkMC': '#9932CC',
+  'color': '#363636',
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle/>
+    <GlobalStyle />
     <ThemeProvider theme={theme} >
       <App />
     </ThemeProvider>
@@ -23,4 +22,4 @@ ReactDOM.render(
 );
 
 
-// serviceWorker.unregister();
+// ServiceWorker.unregister();

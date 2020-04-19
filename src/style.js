@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle} from 'styled-components'
+import styled, {createGlobalStyle,} from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -50,19 +50,22 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     letter-spacing: 1px;
   }
-`
+`;
 export const Left = styled.div`
   margin-right: 300px;
   padding: 20px;
-`
+`;
 
 export const Main = styled.div`
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-`
-// 全局的 
-// 继承样式时 先引入 然后：export const HButton = styled(Button)` ... `
+`;
+
+/*
+ * 全局的
+ * 继承样式时 先引入 然后：export const HButton = styled(Button)` ... `
+ */
 export const Button = styled.span`
   box-sizing: border-box;
   display:inline-block;
@@ -72,4 +75,4 @@ export const Button = styled.span`
   border: 1px solid #ccc;
   color: #999;
   cursor: pointer;
-`
+`;
