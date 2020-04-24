@@ -49,8 +49,10 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     overflow: hidden;
     letter-spacing: 1px;
+    background: #fff;
   }
 `;
+
 export const Left = styled.div`
   margin-right: 300px;
   padding: 20px;
@@ -75,4 +77,8 @@ export const Button = styled.span`
   border: 1px solid #ccc;
   color: #999;
   cursor: pointer;
+`;
+export const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 900px;
 `;

@@ -2,8 +2,8 @@ import React, { Component, } from 'react';
 import E from 'wangeditor';
 import Alert from '../../common/alert/index';
 
-import { BackB, ConfirmB, Footer, HInupt, Header, Wrapper, } from './style';
-
+import { BackB, ConfirmB, Footer, HInupt, Header, } from './style';
+import { Wrapper, } from '../../style';
 
 class Write extends Component {
 

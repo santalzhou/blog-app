@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import {Button, } from '../../style';
 
-export const Wrapper = styled.div`
-  margin: 0 auto;
-  max-width: 900px;
-`;
 export const Header = styled.div`
   margin-bottom: 20px;
   height: 50px;

@@ -1,5 +1,6 @@
 import React, { Component, } from 'react';
-import { Title, Weather, Wrapper, } from './style';
+import { Link, withRouter } from 'react-router-dom'
+import { Title, Weather, RightWrapper, SearchWrapper, Search, CloseBtn } from './style';
 
 class Right extends Component {
 
@@ -13,39 +14,46 @@ class Right extends Component {
       'tempInterval': '',
       'city': '',
       'week': '',
+      focusSearch: false,
+      inputVal: ''
     };
 
+    this.focus = this.focus.bind(this);
+    this.blur = this.blur.bind(this);
+    this.changInput = this.changInput.bind(this);
+    this.cleanInput = this.cleanInput.bind(this);
+    this.keyUp = this.keyUp.bind(this);
   }
 
   render() {
 
     const { date, weat, tip, temp, tempInterval, city, week, } = this.state;
     return (
-      <Wrapper>
+      <RightWrapper>
+        <Weather>
+          {date !== '' ?
+            <p>
+              {`${date} ${week} ${city}  ${weat} ${temp}`}
+            </p>
+            : null}
+        </Weather>
+        <SearchWrapper className={this.state.focusSearch ? 'active' : ''}>
+          <Search placeholder='搜索' onFocus={this.focus} onBlur={this.blur}
+            onChange={this.changInput} onKeyUp={this.keyUp}></Search>
+          <CloseBtn onClick={this.cleanInput}></CloseBtn>
+        </SearchWrapper>
         <Title>
-          个人博客  列表 搜索 链接
+          <Link to='/' className={'link'}><span className="iconfont">&#xe600;</span>首页</Link>
+          <Link to='/write' className={'link'}><span className="iconfont">&#xe612;</span>写博客</Link>
+          <Link to='/list' className={'link'}><span className="iconfont">&#xe6eb;</span>博客列表</Link>
         </Title>
-        {date !== '' ? <Weather>
-          <p>
-            {`${date} ${week} ${city}  ${weat}`}
-          </p>
-          <p>
-            温度：
-            {tempInterval}
-            {' '}
-                当前：
-            {temp}
-            {' '}
-
-          </p>
-        </Weather> : null}
-      </Wrapper>
+        <p>博客分类， 按时间查询？</p>
+      </RightWrapper>
     );
 
   }
 
   componentDidMount() {
-
     this.$axios.get('/weather').then((res) => {
       this.setState({
         'date': res.date,
@@ -60,9 +68,41 @@ class Right extends Component {
     }).catch((res) => {
       // Console.log('获取天气信息失败');
     });
-
   }
 
+  focus() {
+    this.setState({
+      'focusSearch': true
+    })
+  }
+
+  blur() {
+    // this.setState({
+    //   'focusSearch': false
+    // })
+  }
+
+  changInput(e) {
+    this.setState({
+      inputVal: e.target.value
+    })
+  }
+
+  cleanInput(e) {
+    this.setState({
+      inputVal: '',
+      focusSearch: true
+    })
+  }
+
+  // 回车 关键词查询
+  keyUp(e) {
+    if (e.keyCode === 13 && this.state.inputVal !== '') {
+      // console.log(this.state.inputVal)
+      // 携带参数跳转到列表页
+      this.props.history.push(`/list?search=${this.state.inputVal}`);
+    }
+  }
 }
 
-export default Right;
+export default withRouter(Right);

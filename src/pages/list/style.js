@@ -1,10 +1,5 @@
 import styled from 'styled-components';
-import {Button, } from '../../style';
-
-export const Wrapper = styled.div`
-  margin: 0 auto;
-  max-width: 900px;
-`;
+import {Button,} from '../../style';
 
 export const ListWrapper = styled.ul`
   padding: 0 10px; 
