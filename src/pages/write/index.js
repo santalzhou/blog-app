@@ -1,6 +1,6 @@
 import React, { Component, } from 'react';
 import E from 'wangeditor';
-import Alert from '../../common/alert/index';
+import Message from '../../common/alert/index';
 
 import { BackB, ConfirmB, Footer, HInupt, Header, } from './style';
 import { Wrapper, } from '../../style';
@@ -57,7 +57,7 @@ class Write extends Component {
             返回
           </BackB>
         </Footer>
-        {this.state.showAlert ? <Alert title="发布成功" /> : null}
+        {this.state.showAlert ? <Message title="发布成功" /> : null}
       </Wrapper>
     );
 

@@ -1,6 +1,6 @@
 import React, { Component, } from 'react';
-import { Link, withRouter } from 'react-router-dom'
-import { Title, Weather, RightWrapper, SearchWrapper, Search, CloseBtn } from './style';
+import { Link, withRouter, } from 'react-router-dom';
+import { Title, Weather, RightWrapper, SearchWrapper, Search, CloseBtn, } from './style';
 
 class Right extends Component {
 
@@ -15,7 +15,7 @@ class Right extends Component {
       'city': '',
       'week': '',
       focusSearch: false,
-      inputVal: ''
+      inputVal: '',
     };
 
     this.focus = this.focus.bind(this);
@@ -46,6 +46,8 @@ class Right extends Component {
           <Link to='/' className={'link'}><span className="iconfont">&#xe600;</span>首页</Link>
           <Link to='/write' className={'link'}><span className="iconfont">&#xe612;</span>写博客</Link>
           <Link to='/list' className={'link'}><span className="iconfont">&#xe6eb;</span>博客列表</Link>
+          <Link to='/category' className={'link'}><span className="iconfont">&#xe6eb;</span>分类管理</Link>
+
         </Title>
         <p>博客分类， 按时间查询？</p>
       </RightWrapper>
@@ -72,8 +74,8 @@ class Right extends Component {
 
   focus() {
     this.setState({
-      'focusSearch': true
-    })
+      'focusSearch': true,
+    });
   }
 
   blur() {
@@ -84,15 +86,15 @@ class Right extends Component {
 
   changInput(e) {
     this.setState({
-      inputVal: e.target.value
-    })
+      inputVal: e.target.value,
+    });
   }
 
   cleanInput(e) {
     this.setState({
       inputVal: '',
-      focusSearch: true
-    })
+      focusSearch: true,
+    });
   }
 
   // 回车 关键词查询

@@ -82,3 +82,9 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 900px;
 `;
+// 无数据的提示
+export const None = styled.p`
+  text-align: center;
+  color: #aaa;
+  margin: 40px;
+`;

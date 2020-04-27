@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, } from 'styled-components';
 
 const rotate = keyframes`
   from {
@@ -80,7 +80,7 @@ export const SearchWrapper = styled.div`
   //     animation: ${rotate} .8s ease-in-out 1 forwards;
   //   }
   // }
-`
+`;
 
 export const Search = styled.input`
   line-height: 26px;
@@ -90,7 +90,7 @@ export const Search = styled.input`
   color: #888;
   outline: none;
   background: transparent;
-`
+`;
 
 export const CloseBtn = styled.span`
   position: absolute;
@@ -125,7 +125,7 @@ export const CloseBtn = styled.span`
     transform: rotate(-45deg);
     transform-origin: right bottom;
   }
-`
+`;
 // // Create the keyframes
 
 // // Here we create a component that will rotate everything we pass in over two seconds

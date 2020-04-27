@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {GlobalStyle,} from './style.js';
 import App from './App';
 import {ThemeProvider, } from 'styled-components';
-import {IconStyle} from './static/iconfont/index'
+import {IconStyle,} from './static/iconfont/index';
 
 
 const theme = {

@@ -6,6 +6,7 @@ import Right from './common/right/index';
 import Write from './pages/write/index';
 import List from './pages/list/index';
 import Detail from './pages/detail/index';
+import Category from './pages/category/index';
 import Axios from './axios';
 import { Left, Main, } from './style';
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/write" exact component={Write} />
           <Route path="/list" component={List} exac />
           <Route path="/detail/:id" component={Detail} exact />
+          <Route path="/category" component={Category} exact />
         </Left>
         <Right />
       </Main>

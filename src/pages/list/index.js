@@ -1,5 +1,5 @@
 import React, { Component, } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, } from 'react-router-dom';
 import { Item, ListWrapper, MoreB, None, } from './style';
 import { Wrapper, } from '../../style';
 
@@ -55,9 +55,9 @@ class List extends Component {
 
 
   componentWillReceiveProps() {
-    this.setState({list: []}, ()=>{
+    this.setState({list: [],}, ()=>{
       this.getList(1);
-    })
+    });
   }
 
   loadMore() {
